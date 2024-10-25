@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+    ViewData["title"] = "Acesso ao portal CarClinic";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>@ViewData["title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+
+    <div class="row g-3" style="margin-top: 200px;">
+        <div class="col-6">
+            <img src="/img/enter-otp-animate.svg" class="img-fluid" style="width: auto"/>
+        </div>
+        <div class="col-6">
+            <form method="post" asp-controller="Login" asp-action="Entrar">
+
+            </form>
+        </div>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>

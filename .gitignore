@@ -1,0 +1,8 @@
+# Ignorar diretório de build
+/.vs/
+/bin/
+/obj/
+
+# Ignorar arquivos de configuração
+appsettings.json
+appsettings.Development.json
