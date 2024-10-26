@@ -28,7 +28,7 @@
                             <a class="nav-link" asp-controller="Home" asp-action="CarClinic">CarClinic</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Login" asp-action="Entrar">Portal</a>
+                            <a class="nav-link" asp-controller="Login" asp-action="Entrar" target="_blank">Portal</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Home" asp-action="StatusServico">Status do serviço</a>
@@ -43,7 +43,7 @@
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main">
             @RenderBody()
         </main>
     </div>

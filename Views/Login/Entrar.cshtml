@@ -1,4 +1,7 @@
-﻿
+﻿@using CarClinic.Models
+
+@model LoginModel
+
 @{
     Layout = null;
     ViewData["title"] = "Acesso ao portal CarClinic";
@@ -14,14 +17,21 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
-
-    <div class="row g-3" style="margin-top: 200px;">
-        <div class="col-6">
-            <img src="/img/enter-otp-animate.svg" class="img-fluid" style="width: auto"/>
+    <div class="container-sm row">
+        <div class="col-sm-6">
+            <img src="~/img/enter-otp-animate.svg" class="img-fluid" />
         </div>
-        <div class="col-6">
+        <div class="col-sm-6">
             <form method="post" asp-controller="Login" asp-action="Entrar">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="text" name="Email" id="email" class="form-control" />
+                <label for="senha" class="form-label">Senha</label>
+                <input type="password" name="Senha" id="senha" class="form-control" />
 
+                <div class="mt-3">
+                    <button type="submit" class="btn btn-primary">Acessar</button>
+                    <button onclick="fecharJanela()" class="btn btn-danger">Cancelar</button>
+                </div>
             </form>
         </div>
     </div>
