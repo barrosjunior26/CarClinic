@@ -22,9 +22,9 @@
         @{
             if(TempData["ErroValidadeLogin"] != null)
             {
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger mt-5" role="alert">
                     @TempData["ErroValidadeLogin"]
-                    <a asp-controller="Home" asp-action="Suporte" target="_blank">Entrar em contato com o suporte.</a>
+                    <a asp-controller="Home" asp-action="Suporte" target="_blank" style="text-decoration: none; font-weight: 600;">Entrar em contato com o suporte.</a>
                 </div>
             }
         }
@@ -35,8 +35,8 @@
                 <img src="~/img/enter-otp-animate.svg" class="img-fluid" />
             </div>
             <div class="col-sm-6">
-                <h2 class="text-center">Entre com seu login e senha para ter acesso a todos os serviços da CarClinic</h2>
-                <form method="post" asp-controller="Login" asp-action="Entrar">
+                <h2>Entre com seu login e senha para ter acesso a todos os serviços da CarClinic</h2>
+                <form method="post" asp-controller="Login" asp-action="Entrar" style="margin-top: 100px;">
                     <label for="email" class="form-label">E-mail</label>
                     <input type="text" name="Email" id="email" class="form-control" />
                     <label for="senha" class="form-label">Senha</label>
