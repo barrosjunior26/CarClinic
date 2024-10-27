@@ -11,6 +11,11 @@ namespace CarClinic.Controllers
             return View();
         }
 
+        public IActionResult CarClinic()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
