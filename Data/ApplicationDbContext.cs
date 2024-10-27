@@ -10,4 +10,5 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<LoginModel> tb_login { get; set; }
+    public DbSet<PortalModel> tb_portal { get; set; }
 }

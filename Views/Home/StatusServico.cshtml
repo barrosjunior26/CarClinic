@@ -1,0 +1,55 @@
+﻿@using CarClinic.Models;
+
+@model IEnumerable<PortalModel>
+
+@{
+	ViewData["title"] = "Status de serviço do veículo";
+}
+
+<div class="mt-5">
+	<h1>@ViewData["title"]</h1>
+
+	<table class="mt-5 table table-hover">
+		<thead>
+			<tr>
+				<th scope="col">Placa</th>
+				<th scope="col">Marca</th>
+				<th scope="col">Modelo</th>
+				<th scope="col">Proprietário</th>
+				<th scope="col">Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			@{
+				if(Model != null)
+				{
+					if(Model.Count() > 0)
+					{
+						foreach(var servico in Model)
+						{
+							<tr>
+								<td>@servico.Placa</td>
+								<td>@servico.Marca</td>
+								<td>@servico.Modelo</td>
+								<td>@servico.Proprietario</td>
+								<td>
+									@if (servico.Status == "Em análise")
+									{
+										<a asp-controller="Home" asp-action="Observacoes" asp-route-id="@servico.Id" style="text-decoration: none">Em análise - <img src="/img/analise.gif" class="img-fluid" /></a>
+									}else if (servico.Status == "Em serviço")
+									{
+										<label>Em serviço - <img src="/img/manutencao.gif" class="img-fluid" /></label>
+									}
+									else
+									{
+										<label>Concluído - <img src="/img/verificar.png" class="img-fluid" /></label>
+									}
+								</td>
+							</tr>
+						}
+					}
+				}
+			}
+		</tbody>
+	</table>
+</div>
