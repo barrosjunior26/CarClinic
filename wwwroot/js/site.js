@@ -5,3 +5,9 @@
 function fecharJanela() {
     window.close();
 }
+
+setTimeout(function () {
+    $(".alert").fadeOut("slow", function () {
+        $(document).alert("close");
+    });
+},5000);

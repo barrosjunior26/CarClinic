@@ -8,12 +8,12 @@ namespace CarClinic.Controllers
         [HttpGet]
         public IActionResult Entrar()
         {
-            /*ClaimsPrincipal usuario = HttpContext.User;
+            ClaimsPrincipal usuario = HttpContext.User;
 
             if (usuario.Identity.IsAuthenticated)
             {
                 return Redirect("/Portal/Index");
-            }*/
+            }
 
             return View();
         }

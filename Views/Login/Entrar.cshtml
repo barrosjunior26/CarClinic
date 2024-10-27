@@ -17,22 +17,36 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 </head>
 <body>
-    <div class="container-sm row">
-        <div class="col-sm-6">
-            <img src="~/img/enter-otp-animate.svg" class="img-fluid" />
-        </div>
-        <div class="col-sm-6">
-            <form method="post" asp-controller="Login" asp-action="Entrar">
-                <label for="email" class="form-label">E-mail</label>
-                <input type="text" name="Email" id="email" class="form-control" />
-                <label for="senha" class="form-label">Senha</label>
-                <input type="password" name="Senha" id="senha" class="form-control" />
+    <div class="container-sm">
 
-                <div class="mt-3">
-                    <button type="submit" class="btn btn-primary">Acessar</button>
-                    <button onclick="fecharJanela()" class="btn btn-danger">Cancelar</button>
+        @{
+            if(TempData["ErroValidadeLogin"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    @TempData["ErroValidadeLogin"]
                 </div>
-            </form>
+            }
+        }
+
+        <div class="row" style="margin-top: 200px;">
+            <div class="col-sm-6">
+                <h1 class="text-center">@ViewData["title"]</h1>
+                <img src="~/img/enter-otp-animate.svg" class="img-fluid" />
+            </div>
+            <div class="col-sm-6">
+                <h2 class="text-center">Entre com seu login e senha para ter acesso a todos os serviços da CarClinic</h2>
+                <form method="post" asp-controller="Login" asp-action="Entrar">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="text" name="Email" id="email" class="form-control" />
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" name="Senha" id="senha" class="form-control" />
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary">Acessar</button>
+                        <button onclick="fecharJanela()" class="btn btn-danger">Cancelar</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
